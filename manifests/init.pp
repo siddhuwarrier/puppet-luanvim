@@ -3,11 +3,11 @@ class luanvim {
 	include boxen::config
 
 	repository {
-	  '~/.vim':
+	  '/Users/${::boxen_user}/.vim':
 	    source   => 'luan/vimfiles', 
 	    provider => 'git';
 	} ->
 	exec { 'install luan vimfiles':
-		command => '~/.vim/install'
+		command => '/Users/${::boxen_user}/.vim/install'
 	}
 }
